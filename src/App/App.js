@@ -12,7 +12,9 @@ function App() {
   return (
     <Router>
       <div className="app">
-        <Header></Header>
+        <Header
+          logoImage="https://assets.ifttt.com/images/channels/28/icons/monochrome_large.png"
+          menu={["Popular", "New", "Search"]}></Header>
         <div className="app-content">
           <Route exact path="/" component={Home}></Route>
           <Route path="/about" exact component={About}></Route>

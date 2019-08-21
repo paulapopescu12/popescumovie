@@ -1,4 +1,26 @@
 .header {
   background-color: #555;
-  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 100px;
+}
+
+.header-logo {
+  color: white;
+  font-size: 28px;
+}
+
+.logo-image {
+  width: 50px;
+}
+
+.list-item {
+  display: inline;
+  padding: 2px;
+  margin: 2px;
+}
+
+.header-menu {
+  color: white;
 }
