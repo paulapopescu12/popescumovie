@@ -1,26 +1,14 @@
-.card {
-  border: 5px solid rgb(79, 77, 77);
-  color: whitesmoke;
-  background-color: rgb(79, 77, 77);
-}
-
 .collection {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 10px;
 }
 
-.card-title {
-  font-family: Arial, Helvetica, sans-serif;
+.collection-title {
+  color: azure;
   font-size: 30px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   text-align: center;
-}
-
-.card-image {
-  float: left;
-  width: 200px;
-}
-
-.card-description {
-  font-family: Arial, Helvetica, sans-serif;
+  margin: 10px;
 }

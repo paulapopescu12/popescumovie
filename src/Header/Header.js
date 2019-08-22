@@ -4,9 +4,6 @@ import { API_key } from "../constants.js";
 
 function Header(props) {
   console.log("Header: ", props);
-  fetch(
-    "https://api.themoviedb.org/3/discover/movie?api_key=" + { API_key }
-  ).then(res => res.json());
 
   return (
     <header className="header">
