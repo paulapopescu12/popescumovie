@@ -11,7 +11,7 @@ function Home() {
       <Link to="Popular">
         <div className="button-position">
           <button className="button">
-            <span>Read more</span>
+            <span>View more</span>
           </button>
         </div>
       </Link>
@@ -20,7 +20,7 @@ function Home() {
       <Link to="New">
         <div className="button-position">
           <button className="button">
-            <span>Read more</span>
+            <span>View more</span>
           </button>
         </div>
       </Link>
