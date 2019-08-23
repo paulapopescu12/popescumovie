@@ -2,6 +2,7 @@ import React from "react";
 import "./Collection.css";
 import Card from "../Card/Card";
 import { API_key } from "../constants";
+import { Link } from "react-router-dom";
 
 class Collection extends React.Component {
   state = {
@@ -12,7 +13,12 @@ class Collection extends React.Component {
   componentDidMount() {
     console.log("Collection did mount!");
     console.log("Status: ", this.state.status);
-    fetch("https://api.themoviedb.org/3/discover/movie?api_key=" + API_key)
+    fetch(
+      "https://api.themoviedb.org/3/discover/movie?api_key=" +
+        API_key +
+        "&sort_by=" +
+        this.props.sorting
+    )
       .then(response => response.json())
       .then(response => {
         console.log(response);
@@ -21,7 +27,9 @@ class Collection extends React.Component {
             return {
               title: movie.original_title,
               description: movie.overview,
-              src: "https://image.tmdb.org/t/p/w500" + movie.poster_path,
+              src:
+                movie.poster_path &&
+                "https://image.tmdb.org/t/p/w500" + movie.poster_path,
               genres: movie.genre_ids,
             };
           }),
@@ -33,19 +41,20 @@ class Collection extends React.Component {
   render() {
     return (
       <div>
-        <h1 className="collection-title">Popular</h1>
         <ul className="collection">
-          {this.state.movies.map((movie, index) => {
-            return (
-              <Card
-                key={index}
-                title={movie.title}
-                genres={movie.genres}
-                description={movie.description}
-                src={movie.src}
-              />
-            );
-          })}
+          {this.state.movies
+            .slice(0, this.props.cardCount)
+            .map((movie, index) => {
+              return (
+                <Card
+                  key={index}
+                  title={movie.title}
+                  genres={movie.genres}
+                  description={movie.description}
+                  src={movie.src}
+                />
+              );
+            })}
         </ul>
       </div>
     );

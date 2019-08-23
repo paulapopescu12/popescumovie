@@ -3,12 +3,3 @@
   grid-template-columns: 1fr 1fr;
   grid-gap: 10px;
 }
-
-.collection-title {
-  color: azure;
-  font-size: 30px;
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-  text-align: center;
-  margin: 10px;
-}
