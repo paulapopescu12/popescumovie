@@ -1,13 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./Header.css";
-import { API_key } from "../constants.js";
 
 function Header(props) {
   return (
     <header className="header">
       <div className="header-logo">
-        <img className="logo-image" src={props.logoImage} alt="" />
+        <Link to="/">
+          <img className="logo-image" src={props.logoImage} alt="" />
+        </Link>
       </div>
       <ul className="header-menu">
         {props.menu.map(item => (

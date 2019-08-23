@@ -1,14 +1,17 @@
 import React from "react";
 import "./Card.css";
-import { tsPropertySignature } from "@babel/types";
+import { Link } from "react-router-dom";
 
-function Card({ title, genres, description, src, index }) {
+function Card({ title, genres, description, src, index, to }) {
   return (
     <li className="card">
       {src ? (
-        <img className="card-image" src={src} />
+        <img className="card-image" src={src} alt="" />
       ) : (
-        <img src="https://www.auro-3d.com/wp-content/uploads/2016/08/no-poster-available.jpg" />
+        <img
+          src="https://www.auro-3d.com/wp-content/uploads/2016/08/no-poster-available.jpg"
+          alt=""
+        />
       )}
       <div className="card-text">
         <ul className="genre">
@@ -24,7 +27,9 @@ function Card({ title, genres, description, src, index }) {
           {description}
         </div>
         <div className="card-button-position">
-          <button className="card-button">Read more</button>
+          <Link to={to}>
+            <span className="card-button">Read more</span>
+          </Link>
         </div>
       </div>
     </li>
