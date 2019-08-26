@@ -1,0 +1,21 @@
+.movie-actors {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  grid-auto-rows: 1;
+  justify-content: space-around;
+  color: white;
+  text-align: center;
+}
+
+.actor-name {
+  font-size: 10px;
+}
+
+.actor-rol {
+  color: azure;
+  font-size: 10px;
+}
+
+.actor-image {
+  height: 70px;
+}

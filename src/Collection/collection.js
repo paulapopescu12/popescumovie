@@ -5,13 +5,10 @@ import { API_key } from "../constants";
 
 class Collection extends React.Component {
   state = {
-    status: "success",
     movies: [],
   };
 
   componentDidMount() {
-    console.log("Collection did mount!");
-    console.log("Status: ", this.state.status);
     fetch(
       "https://api.themoviedb.org/3/discover/movie?api_key=" +
         API_key +
@@ -20,7 +17,6 @@ class Collection extends React.Component {
     )
       .then(response => response.json())
       .then(response => {
-        console.log(response);
         this.setState({
           movies: response.results.map(movie => {
             return {
@@ -35,8 +31,6 @@ class Collection extends React.Component {
           }),
         });
       });
-
-    this.setState({ status: "error" });
   }
   render() {
     return (
